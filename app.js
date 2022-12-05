@@ -8,7 +8,7 @@ const computerPlay = () => {
 };
 
 const playerPlay = () => {
-  let result = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+  let result = prompt("Choose Rock, Paper, or Scissors").toLowerCase().trim();
   if (result !== "rock" && result !== "paper" && result !== "scissors") {
     return alert("Input invalid! Please enter Rock, Paper, or Scissors.");
   } else {
