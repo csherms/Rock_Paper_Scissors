@@ -1,0 +1,36 @@
+// if (
+  //   playerSelection !== "rock" &&
+  //   playerSelection !== "paper" &&
+  //   playerSelection !== "scissors"
+  // ) {
+  //   return alert("Input invalid! Please enter Rock, Paper, or Scissors.");
+  // }
+
+  // if (playerSelection == computerSelection) {
+  //   let result = `Tie! Try again. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "rock" && computerSelection == "paper") {
+  //   computerScore++;
+  //   let result = `Round lost! Paper covers rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "rock" && computerSelection == "scissors") {
+  //   playerScore++;
+  //   let result = `Round Won! Rock smashes scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "paper" && computerSelection == "rock") {
+  //   playerScore++;
+  //   let result = `Round Won! Paper covers rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "paper" && computerSelection == "scissors") {
+  //   computerScore++;
+  //   let result = `Round Lost! Scissors cuts paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "scissors" && computerSelection == "rock") {
+  //   computerScore++;
+  //   let result = `Round Lost! Rock smashes scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // } else if (playerSelection == "scissors" && computerSelection == "paper") {
+  //   playerScore++;
+  //   let result = `Round Won! Scissors cuts paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  //   return result;
+  // }

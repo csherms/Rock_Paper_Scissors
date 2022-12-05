@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+let rounds = 0;
 
 const computerPlay = () => {
   const randNum = Math.floor(Math.random() * 3);
@@ -7,47 +8,49 @@ const computerPlay = () => {
 };
 
 const playerPlay = () => {
-  let playerSelection = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
-  if (
-    playerSelection !== "rock" &&
-    playerSelection !== "paper" &&
-    playerSelection !== "scissors"
-  ) {
-    alert("Invalid entry: Please enter Rock, Paper or Scissors");
+  let result = prompt("Choose Rock, Paper, or Scissors").toLowerCase();
+  if (result !== "rock" && result !== "paper" && result !== "scissors") {
+    return alert("Input invalid! Please enter Rock, Paper, or Scissors.");
+  } else {
+    return result;
   }
-  return playerSelection;
 };
 
+// Game rounds
 function playRound(playerSelection, computerSelection) {
-  if (playerSelection == computerSelection) {
-    let result = `Tie! Try again. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  }
-
-  if (playerSelection == "rock" && computerSelection == "paper") {
-    computerScore++;
-    let result = `You lose! Paper covers rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  } else if (playerSelection == "rock" && computerSelection == "scissors") {
-    playerScore++;
-    let result = `You Win! Rock smashes scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  } else if (playerSelection == "paper" && computerSelection == "rock") {
-    playerScore++;
-    let result = `You Win! Paper covers rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  } else if (playerSelection == "paper" && computerSelection == "scissors") {
-    computerScore++;
-    let result = `You Lose! Scissors cuts paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  } else if (playerSelection == "scissors" && computerSelection == "rock") {
-    computerScore++;
-    let result = `You Lose! Rock smashes scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
-  } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    playerScore++;
-    let result = `You Win! Scissors cuts paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
-    return result;
+  if (playerSelection === computerSelection) {
+    rounds++;
+    return `Round Tied! \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+  } else if (playerSelection === "rock") {
+    if (computerSelection === "paper") {
+      computerScore++;
+      rounds++;
+      return `Round Lost! Paper cover Rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    } else {
+      playerScore++;
+      rounds++;
+      return `Round Won! Rock smashes Scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    }
+  } else if (playerSelection === "paper") {
+    if (computerSelection === "scissors") {
+      computerScore++;
+      rounds++;
+      return `Round Lost! Scissor cuts Paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    } else {
+      playerScore++;
+      rounds++;
+      return `Round Won! Paper covers Rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    }
+  } else if (playerSelection === "scissors") {
+    if (computerSelection === "rock") {
+      computerScore++;
+      rounds++;
+      return `Round Lost! Rock smashes Scissors.\n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    } else {
+      playerScore++;
+      rounds++;
+      return `Round Won! Scissors cust Paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    }
   }
 }
 
@@ -68,9 +71,10 @@ function endGame() {
 }
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  do {
     console.log(playRound(playerPlay(), computerPlay()));
-  }
+  } while (rounds < 5);
+
   endGame();
 }
 
