@@ -20,36 +20,36 @@ const playerPlay = () => {
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     rounds++;
-    return `Round Tied! \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+    return `Round Tied! \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
   } else if (playerSelection === "rock") {
     if (computerSelection === "paper") {
       computerScore++;
       rounds++;
-      return `Round Lost! Paper cover Rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Lost! \nPaper covers Rock. \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     } else {
       playerScore++;
       rounds++;
-      return `Round Won! Rock smashes Scissors. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Won! \nRock smashes Scissors. \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     }
   } else if (playerSelection === "paper") {
     if (computerSelection === "scissors") {
       computerScore++;
       rounds++;
-      return `Round Lost! Scissor cuts Paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Lost! \nScissor cuts Paper. \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     } else {
       playerScore++;
       rounds++;
-      return `Round Won! Paper covers Rock. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Won! \nPaper covers Rock. \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     }
   } else if (playerSelection === "scissors") {
     if (computerSelection === "rock") {
       computerScore++;
       rounds++;
-      return `Round Lost! Rock smashes Scissors.\n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Lost! \nRock smashes Scissors.\nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     } else {
       playerScore++;
       rounds++;
-      return `Round Won! Scissors cust Paper. \n Player score: ${playerScore} \n Computer score: ${computerScore}`;
+      return `Round Won! \nScissors cuts Paper. \nPlayer: ${playerScore} \nComputer: ${computerScore}`;
     }
   }
 }
@@ -57,15 +57,15 @@ function playRound(playerSelection, computerSelection) {
 function endGame() {
   if (playerScore > computerScore) {
     console.log(
-      `Game Over! You are Victorious!😎 \nFinal score: \n${playerScore} to ${computerScore}`
+      `Game Over! \nYou are Victorious!😎 \nFinal score: \n${playerScore} to ${computerScore}`
     );
   } else if (computerScore > playerScore) {
     console.log(
-      `Game Over! You are Defeated!😢 \nFinal score: \n${playerScore} to ${computerScore}`
+      `Game Over! \nYou were Defeated!😢 \nFinal score: \n${playerScore} to ${computerScore}`
     );
   } else {
     console.log(
-      `Game Over! Tie Game!🍻 \nFinal score: \n${playerScore} to ${computerScore}`
+      `Game Over! \nTie Game!🍻 \nFinal score: \n${playerScore} to ${computerScore}`
     );
   }
 }
